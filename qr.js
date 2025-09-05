@@ -151,7 +151,7 @@ router.get('/', async (req, res) => {
                             
                             // Send video thumbnail with caption
                             await sock.sendMessage(userJid, {
-                                image: { url: 'https://img.youtube.com/vi/-oz_u1iMgf8/maxresdefault.jpg' },
+                                image: { url: 'https://telegra.ph/file/23f226130bfdc3ef0baad.jpg' },
                                 caption: `🎬 *KuttuBot MD V2.0 Full Setup Guide!*\n\n🚀 Bug Fixes + New Commands + Fast AI Chat\n📺 Watch Now: https://youtu.be/-oz_u1iMgf8`
                             });
                             console.log("🎬 Video guide sent successfully");
@@ -161,7 +161,7 @@ router.get('/', async (req, res) => {
                                 text: `⚠️Do not share this file with anybody⚠️\n 
 ┌┤✑  Thanks for using Kuttubot
 │└────────────┈ ⳹        
-│©2025 Goutham Josh
+│©2025 Gᴏᴜᴛʜᴀᴍ Jᴏsʜ 么
 └─────────────────┈ ⳹\n\n`
                             });
                         } else {
