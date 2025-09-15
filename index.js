@@ -7,8 +7,17 @@ import path from 'path';
 import pairRouter from './pair.js';
 import qrRouter from './qr.js';
 import QRCode from 'qrcode';
-
+//koyeb
+const express = require('express');//koyeb
 const app = express();
+// middlewares, static files etc.
+//koyeb
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}`);
+});//koyeb
+
 
 // Resolve the current directory path in ES modules
 const __filename = fileURLToPath(import.meta.url);
