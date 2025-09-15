@@ -3,31 +3,21 @@ import bodyParser from 'body-parser';
 import { fileURLToPath } from 'url';
 import path from 'path';
 
-// Importing the modules
 import pairRouter from './pair.js';
 import qrRouter from './qr.js';
 import QRCode from 'qrcode';
-//koyeb
-const express = require('express');//koyeb
+import('events').then(events => {
+    events.EventEmitter.defaultMaxListeners = 500;
+});
+
 const app = express();
-// middlewares, static files etc.
-//koyeb
+
+// Set port from Koyeb environment or fallback to 3000
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}`);
-});//koyeb
-
-
-// Resolve the current directory path in ES modules
+// Resolve __dirname in ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-const PORT = process.env.PORT || 8000;
-
-import('events').then(events => {
-    events.EventEmitter.defaultMaxListeners = 500;
-});
 
 // Middleware
 app.use(bodyParser.json());
@@ -36,14 +26,15 @@ app.use(express.static(__dirname));
 
 // Routes
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'pair.html'));
+    res.sendFile(path.join(__dirname, 'pair.html'));
 });
 
 app.use('/pair', pairRouter);
 app.use('/qr', qrRouter);
 
+// Start server (for Koyeb)
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`GitHub: GouthamSER\n\nServer running on http://0.0.0.0:${PORT}`);
+    console.log(`GitHub: GouthamSER\nServer running at http://0.0.0.0:${PORT}`);
 });
 
 export default app;
