@@ -1,14 +1,12 @@
 import * as mega from 'megajs';
 
-// Get credentials directly from environment variables (no .env needed)
-const MEGA_EMAIL = process.env.MEGA_EMAIL;
-const MEGA_PASSWORD = process.env.MEGA_PASSWORD;
+// Use environment variables first
+const MEGA_EMAIL = process.env.MEGA_EMAIL || 'your-local-mega-email@gmail.com';
+const MEGA_PASSWORD = process.env.MEGA_PASSWORD || 'YourLocalMegaPassword';
 const MEGA_UA = process.env.MEGA_UA || 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)';
 
 if (!MEGA_EMAIL || !MEGA_PASSWORD) {
-  throw new Error(
-    'MEGA_EMAIL and MEGA_PASSWORD must be set as environment variables'
-  );
+  throw new Error('Mega email and password must be provided either via env or locally');
 }
 
 const auth = {
