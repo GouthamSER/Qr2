@@ -1,11 +1,22 @@
 import * as mega from 'megajs';
 
-// Mega authentication credentials
+// Get credentials directly from environment variables (no .env needed)
+const MEGA_EMAIL = process.env.MEGA_EMAIL;
+const MEGA_PASSWORD = process.env.MEGA_PASSWORD;
+const MEGA_UA = process.env.MEGA_UA || 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)';
+
+if (!MEGA_EMAIL || !MEGA_PASSWORD) {
+  throw new Error(
+    'MEGA_EMAIL and MEGA_PASSWORD must be set as environment variables'
+  );
+}
+
 const auth = {
-    email: 'gouthamjosh22@gmail.com', // Replace with your Mega email
-    password: 'Goutham@2006', // Replace with your Mega password
-    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246'
+  email: MEGA_EMAIL,
+  password: MEGA_PASSWORD,
+  userAgent: MEGA_UA
 };
+
 
 // Function to upload a file to Mega and return the URL
 export const upload = (data, name) => {
