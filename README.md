@@ -21,6 +21,9 @@ const auth = {
 };
 ```
 
-- **3) Deploy to Render**  
-  [![Render - Deploy](https://img.shields.io/badge/Render-Deploy%20Web%20Service-46E3B7?logo=render&logoColor=white)](https://render.com)
-  
+- **3) Deploy to Koyeb**
+
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?name=kuttu-bot-pair-code&type=git&repository=GouthamSER%2FqRkuttubotmd&branch=main&build_command=npm+install&run_command=node+index.js&instance_type=free&regions=fra&instances_min=0&autoscaling_sleep_idle_delay=3600)
+<br> <br> 
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=45&width=435&lines=DONT+Touch+the+Code;ONLY+GENERATE+THE+SESSION;USING+THE+ABOVE+LINK+BUTTON;If+u+want+to+edit+or+modify+please+add+my+github+copyright;Have+a+Nice+Day+%F0%9F%98%81)](https://git.io/typing-svg)
